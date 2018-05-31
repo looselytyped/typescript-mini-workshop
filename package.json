@@ -1,0 +1,20 @@
+{
+  "name": "typescript-tutorial",
+  "version": "1.0.0",
+  "description": "a typescript tutorial",
+  "scripts": {
+    "tsc": "node node_modules/typescript/bin/tsc",
+    "test": "nodemon --ext ts --exec 'jasmine-ts --config=spec/support/jasmine.json'"
+  },
+  "author": "Raju Gandhi",
+  "license": "Apache-2.0",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jasmine": "^2.8.7",
+    "jasmine": "^3.1.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "jasmine-ts": "^0.2.1",
+    "nodemon": "^1.17.5",
+    "typescript": "^2.8.3"
+  }
+}
