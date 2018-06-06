@@ -16,5 +16,8 @@
     "jasmine-ts": "^0.2.1",
     "nodemon": "^1.17.5",
     "typescript": "^2.8.3"
+  },
+  "repository": {
+    "url": "git@github.com:looselytyped/typescript-mini-workshop.git"
   }
 }
