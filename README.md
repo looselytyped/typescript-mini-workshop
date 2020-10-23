@@ -32,7 +32,36 @@ The objective of this workshop is to write a model a `Department`, that consists
 A `Manager` can have a `Title` that is an enum.
 
 The `Employee` and `Manager` are to have a custom `toString` implementation.
-The `Department` should have the ability to `hire` more `Employee`-s, and be able to report the average salary across the department.
+The `Department` should have the ability to `hire` more `Employee`-s (which in turn returns the `Department` itself to allow for a fluent API), and be able to report the `averageSalary` across the department (Think _functional_ programming here).
+
+Outside of `hire` and `averageSalary` all the other methods can be implemented in any which way you like.
+But they do present opportunities to use things like `super` and _template strings_.
+
+Here is a UML(ish) diagram
+
+```
++--------------------------------------+       +---------------------+
+|              Department              |       |      Employee       |
++--------------------------------------+       +---------------------+
+| name: string                         |       | employeeId: number  |
+| manager: Manager                     | 1   n | firstName: string   |
+| employees: Employee[]                +-------+ lastName: string    |
++--------------------------------------+       | salary: number      |
+| hire(employee: Employee): Department |       +---------------------+
+| averageSalary(): number              |       | fullName(): string  |
+|                                      |       | toString(): string  |
++------------------+-------------------+       +----------+----------+
+                   | 1                                    ^
+                   |                                      | extends
+                   |                                      |
+                   |                            +---------+-----------+    +------------+
+                   |                            |      Manager        |    | Title(enum)|
+                   |                          1 +---------------------+    +------------+
+                   +----------------------------+ title: Title        +----+ Junior     |
+                                                +---------------------+    | Senior     |
+                                                | toString(): string  |    |            |
+                                                +---------------------+    +------------+
+```
 
 All of the test in this project should be unit tested using the in-built support for Jasmine.
 
